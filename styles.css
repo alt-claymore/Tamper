@@ -1,1 +1,125 @@
-test
+#deepseek-enhanced-buttons {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 9999;
+    background: rgb(46 31 0);
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid #e5e5e5;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    max-width: 210px;
+}
+
+.buttons-column {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 58px;
+}
+
+.enhanced-prompt-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+.enhanced-prompt-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.enhanced-prompt-btn:active {
+    transform: translateY(0);
+}
+
+.enhanced-prompt-btn.active {
+    animation: pulse 1.5s infinite;
+}
+
+.enhanced-prompt-btn.paste-only {
+    border: 2px dashed rgba(255, 255, 255, 0.5);
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7); }
+    70% { box-shadow: 0 0 0 6px rgba(255, 107, 53, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0); }
+}
+
+.enhanced-prompt-btn .tooltip {
+    visibility: hidden;
+    position: absolute;
+    right: 120%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #333;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.enhanced-prompt-btn .tooltip::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent #333;
+}
+
+.enhanced-prompt-btn:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.pipeline-status {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgb(151 41 1 / 90%);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 99999;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+.config-status {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #4CAF50;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    z-index: 99999;
+    opacity: 0.8;
+}
