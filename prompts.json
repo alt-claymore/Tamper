@@ -292,6 +292,13 @@
       "title": "Инсайты",
       "color": "#10a37f",
       "text": "<role>Роль: Text Analytics / Text Mining</role>\n<context>Контекст:  Поиск информации среди массивов воды</context>\n<task>Задача: Найти Практические советы, реальный опыт, инсайты, мнение и все то, что НЕ очевидно</task>"
+    }, 		
+	{
+      "id": "extra_2sent35454",
+      "label": "💡💡",
+      "title": "ОПЫТ",
+      "color": "#10a37f",
+      "text": "<role>Роль: Text Analytics / Text Mining</role>\n<context>Контекст:  Поиск информации среди массивов воды (fluff, wordiness)</context>\n<task>Задача: Найти  реальный ОПЫТ и МНЕНИЯ. Надо отобразить РЕАЛИИ</task>"
     }, 	
 	{
       "id": "extra354453",
