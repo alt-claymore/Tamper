@@ -209,7 +209,7 @@
       "label": "📝",
       "title": "Шаблон: Роль-Контекст-Задача",
       "color": "#6c757d",
-      "text": "<role>Роль:</role>\n<context>Контекст:</context>\n<task>Задача:</task>"
+      "text": "<role>Роль: программист</role>\n<context>Контекст:</context>\n<task>Задача:</task>"
     },
     {
       "id": "paste_template3",
