@@ -1,13 +1,19 @@
+:root {
+    --panel-bg: rgb(46 31 0); --panel-border: #e5e5e5; --btn-text: #ffffff;
+    --tab-bg: #333; --tab-text: #ccc; --tab-hover-bg: #444; --tab-active-bg: #555; --tab-border: #555;
+    --toggle-bg: #555; --toggle-hover: #666; --tooltip-bg: #333;
+}
+
 #deepseek-enhanced-buttons {
     position: fixed;
     top: 10px;
     right: 20px;
     z-index: 9999;
-    background: rgb(46 31 0);
+    background: var(--panel-bg);
     padding: 8px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    border: 1px solid #e5e5e5;
+    border: 1px solid var(--panel-border);
     backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
@@ -18,7 +24,6 @@
     overflow: hidden;
 }
 
-/* === НОВЫЕ ТАБЫ === */
 .tabs-container {
     display: flex;
     gap: 4px;
@@ -29,9 +34,9 @@
     flex: 1;
     padding: 4px;
     border-radius: 6px;
-    border: 1px solid #555;
-    background: #333;
-    color: #ccc;
+    border: 1px solid var(--tab-border);
+    background: var(--tab-bg);
+    color: var(--tab-text);
     font-size: 11px;
     font-weight: bold;
     cursor: pointer;
@@ -40,19 +45,18 @@
 }
 
 .tab-btn:hover {
-    background: #444;
+    background: var(--tab-hover-bg);
     color: #fff;
 }
 
 .tab-btn.active {
-    background: #555;
+    background: var(--tab-active-bg);
     color: #fff;
     border-color: #888;
 }
 
-/* === НОВЫЙ ПЛЕЙСХОЛДЕР АРХИВА === */
 .legacy-loading {
-    color: #fff;
+    color: var(--btn-text);
     text-align: center;
     padding: 10px;
     font-size: 12px;
@@ -70,7 +74,6 @@
     cursor: pointer;
     font-size: 11px;
 }
-/* ==================== */
 
 .buttons-columns-container {
     display: flex;
@@ -89,7 +92,7 @@
     border: none;
     cursor: pointer;
     font-size: 12px;
-    background: #555;
+    background: var(--toggle-bg);
     color: white;
     display: flex;
     align-items: center;
@@ -99,7 +102,7 @@
 }
 
 .toggle-panel-btn:hover {
-    background: #666;
+    background: var(--toggle-hover);
     transform: scale(1.05);
 }
 
@@ -159,7 +162,7 @@
     right: 120%;
     top: 50%;
     transform: translateY(-50%);
-    background: #333;
+    background: var(--tooltip-bg);
     color: white;
     padding: 6px 12px;
     border-radius: 4px;
@@ -179,7 +182,7 @@
     margin-top: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: transparent transparent transparent #333;
+    border-color: transparent transparent transparent var(--tooltip-bg);
 }
 
 .enhanced-prompt-btn:hover .tooltip {
