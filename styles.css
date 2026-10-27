@@ -1,19 +1,13 @@
-:root {
-    --panel-bg: rgb(46 31 0); --panel-border: #e5e5e5; --btn-text: #ffffff;
-    --tab-bg: #333; --tab-text: #ccc; --tab-hover-bg: #444; --tab-active-bg: #555; --tab-border: #555;
-    --toggle-bg: #555; --toggle-hover: #666; --tooltip-bg: #333;
-}
-
 #deepseek-enhanced-buttons {
     position: fixed;
     top: 10px;
     right: 20px;
     z-index: 9999;
-    background: var(--panel-bg);
+    background: rgb(46 31 0);
     padding: 8px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    border: 1px solid var(--panel-border);
+    border: 1px solid #e5e5e5;
     backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
@@ -21,9 +15,10 @@
     max-width: 90vw;
     min-height: 40px;
     transition: all 0.3s ease;
-    overflow: hidden;
+    /* overflow: hidden;  <-- УБРАНО */
 }
 
+/* === НОВЫЕ ТАБЫ === */
 .tabs-container {
     display: flex;
     gap: 4px;
@@ -34,9 +29,9 @@
     flex: 1;
     padding: 4px;
     border-radius: 6px;
-    border: 1px solid var(--tab-border);
-    background: var(--tab-bg);
-    color: var(--tab-text);
+    border: 1px solid #555;
+    background: #333;
+    color: #ccc;
     font-size: 11px;
     font-weight: bold;
     cursor: pointer;
@@ -45,18 +40,19 @@
 }
 
 .tab-btn:hover {
-    background: var(--tab-hover-bg);
+    background: #444;
     color: #fff;
 }
 
 .tab-btn.active {
-    background: var(--tab-active-bg);
+    background: #555;
     color: #fff;
     border-color: #888;
 }
 
+/* === НОВЫЙ ПЛЕЙСХОЛДЕР АРХИВА === */
 .legacy-loading {
-    color: var(--btn-text);
+    color: #fff;
     text-align: center;
     padding: 10px;
     font-size: 12px;
@@ -92,17 +88,18 @@
     border: none;
     cursor: pointer;
     font-size: 12px;
-    background: var(--toggle-bg);
+    background: #555;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.2s ease;
     margin-top: 4px;
+    z-index: 10; /* На всякий случай, чтобы быть поверх */
 }
 
 .toggle-panel-btn:hover {
-    background: var(--toggle-hover);
+    background: #666;
     transform: scale(1.05);
 }
 
@@ -162,7 +159,7 @@
     right: 120%;
     top: 50%;
     transform: translateY(-50%);
-    background: var(--tooltip-bg);
+    background: #333;
     color: white;
     padding: 6px 12px;
     border-radius: 4px;
@@ -182,7 +179,7 @@
     margin-top: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: transparent transparent transparent var(--tooltip-bg);
+    border-color: transparent transparent transparent #333;
 }
 
 .enhanced-prompt-btn:hover .tooltip {
@@ -241,3 +238,9 @@
 .usage-badge.heat-low  { background: #3b82f6; opacity: 1; }
 .usage-badge.heat-mid  { background: #f59e0b; opacity: 1; }
 .usage-badge.heat-high { background: #ef4444; opacity: 1; }
+
+/* === СВЕРНУТОЕ СОСТОЯНИЕ === */
+#deepseek-enhanced-buttons.collapsed .tabs-container,
+#deepseek-enhanced-buttons.collapsed .buttons-columns-container {
+    display: none;
+}
